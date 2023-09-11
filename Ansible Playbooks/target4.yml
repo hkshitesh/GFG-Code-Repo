@@ -1,0 +1,12 @@
+---
+- hosts: gfg
+  user: gfg
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Debian Family Installation
+      command: apt-get install apache2 -y
+      when: ansible_os_family == "Debian"
+    - name: RedHat Family Installation
+      command: yum install httpd -y
+      when: ansible_os_family == "RedHat"

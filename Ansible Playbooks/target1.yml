@@ -1,0 +1,8 @@
+---
+- hosts: gfg
+  user: gfg
+  become: yes
+  connection: ssh
+  tasks:
+  - name: Install HTTPD on Node 1 and Node 2
+    action: yum name=httpd state=installed

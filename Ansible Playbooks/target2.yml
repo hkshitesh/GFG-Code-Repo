@@ -1,0 +1,15 @@
+---
+- hosts: gfg
+  user: gfg
+  become: yes
+  connection: ssh
+  vars:
+    pkgname1: httpd
+    pkgname2: nginx
+    currstate: present
+
+  tasks:
+    - name: Install HTTPD
+      action: yum name='{{pkgname1}}' state='{{currstate}}'
+    - name: Install Nginx
+      action: yum name='{{pkgname2}}' state='{{currstate}}'

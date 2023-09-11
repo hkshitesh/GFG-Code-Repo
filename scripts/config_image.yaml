@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: GeeksforGeeks
+   spec:
+      containers:
+      - name: gfg-image
+        image: <docker_image_name>
+        imagePullPolicy: Always
+        command: ["echo", "SUCCESS"]

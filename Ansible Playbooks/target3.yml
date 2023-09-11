@@ -1,0 +1,10 @@
+---
+- hosts: gfg
+  user: gfg
+  become: yes
+  connection: ssh
+  tasks:
+    - name: RedHat Family Installation
+      command: yum install httpd -y
+    - name: Debian Family Installation
+      command: apt-get install apache2 -y
